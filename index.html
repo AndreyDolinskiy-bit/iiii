@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f6fb">
+  <title>в кого більше число гра</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game">
+    <p class="eyebrow">Гра на удачу</p>
+    <h1>В кого більше? число</h1>
+
+    <form class="setup" id="setup-form" novalidate>
+      <label for="player-input" class="visually-hidden">Твоє ім’я</label>
+      <input id="player-input" name="player" type="text" maxlength="24" autocomplete="given-name" placeholder="Введи своє ім’я" aria-describedby="name-error" required>
+      <button class="primary" type="submit">Почати гру</button>
+    </form>
+    <p class="error" id="name-error" role="alert"></p>
+
+    <section class="play-area" id="play-area" aria-label="Ігрове поле" hidden>
+      <div class="scoreboard" aria-label="Рахунок">
+        <span class="score" id="player-score" aria-label="Очки гравця">0</span>
+        <span class="score-separator" aria-hidden="true">:</span>
+        <span class="score" id="computer-score" aria-label="Очки комп’ютера">0</span>
+      </div>
+      <p class="round" id="round-label">Раунд 1</p>
+      <div class="players">
+        <article class="player-card">
+          <p class="player-name" id="player-name">Гравець</p>
+          <div class="number" id="player-number" aria-label="Число гравця">—</div>
+        </article>
+        <article class="player-card computer">
+          <p class="player-name">Комп’ютер</p>
+          <div class="number" id="computer-number" aria-label="Число комп’ютера">—</div>
+        </article>
+      </div>
+      <p class="result" id="result" role="status" aria-live="polite">Натисни кнопку, щоб зіграти!</p>
+      <div class="actions">
+        <button class="primary" id="play-button" type="button">Зіграти раунд</button>
+        <button class="secondary restart" id="restart-button" type="button" hidden>Почати спочатку</button>
+      </div>
+      <p class="hint">Числа генеруються випадково від 1 до 100</p>
+    </section>
+  </main>
+
+  <script src="js.js" defer></script>
+</body>
+</html>
